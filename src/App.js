@@ -13,7 +13,7 @@ function App() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Link href="/recipes">Recipes</Nav.Link>
-          <Nav.Link href="/create">Add new</Nav.Link>
+          <Nav.Link href="/create">Add recipe</Nav.Link>
           <Nav.Link href="/login">Login</Nav.Link>
         </Nav>
       </Navbar.Collapse>
