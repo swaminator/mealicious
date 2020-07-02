@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-mealicious-dev-104025-authRole",
+            "UnauthRoleArn": "arn:aws:iam::033205456844:role/amplify-mealicious-dev-104025-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::033205456844:role/amplify-mealicious-dev-104025-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-mealicious-dev-104025-deployment",
+            "UnauthRoleName": "amplify-mealicious-dev-104025-unauthRole",
+            "StackName": "amplify-mealicious-dev-104025",
+            "StackId": "arn:aws:cloudformation:us-west-2:033205456844:stack/amplify-mealicious-dev-104025/9f32fe90-ba2f-11ea-b0a8-02bc161bfc0c",
+            "AmplifyAppId": "decjc1au26onh"
+        }
+    }
+}

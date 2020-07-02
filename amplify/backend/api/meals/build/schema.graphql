@@ -1,0 +1,170 @@
+type Meal {
+  id: ID!
+  name: String!
+  description: String
+  rating: Rating
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum Rating {
+  YUCK
+  MEH
+  GOOD
+  AMAZING
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelMealConnection {
+  items: [Meal]
+  nextToken: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelRatingInput {
+  eq: Rating
+  ne: Rating
+}
+
+input ModelMealFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  description: ModelStringInput
+  rating: ModelRatingInput
+  and: [ModelMealFilterInput]
+  or: [ModelMealFilterInput]
+  not: ModelMealFilterInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Query {
+  getMeal(id: ID!): Meal
+  listMeals(filter: ModelMealFilterInput, limit: Int, nextToken: String): ModelMealConnection
+}
+
+input CreateMealInput {
+  id: ID
+  name: String!
+  description: String
+  rating: Rating
+}
+
+input UpdateMealInput {
+  id: ID!
+  name: String
+  description: String
+  rating: Rating
+}
+
+input DeleteMealInput {
+  id: ID
+}
+
+type Mutation {
+  createMeal(input: CreateMealInput!, condition: ModelMealConditionInput): Meal
+  updateMeal(input: UpdateMealInput!, condition: ModelMealConditionInput): Meal
+  deleteMeal(input: DeleteMealInput!, condition: ModelMealConditionInput): Meal
+}
+
+input ModelMealConditionInput {
+  name: ModelStringInput
+  description: ModelStringInput
+  rating: ModelRatingInput
+  and: [ModelMealConditionInput]
+  or: [ModelMealConditionInput]
+  not: ModelMealConditionInput
+}
+
+type Subscription {
+  onCreateMeal: Meal @aws_subscribe(mutations: ["createMeal"])
+  onUpdateMeal: Meal @aws_subscribe(mutations: ["updateMeal"])
+  onDeleteMeal: Meal @aws_subscribe(mutations: ["deleteMeal"])
+}
