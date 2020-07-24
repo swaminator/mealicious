@@ -2,16 +2,8 @@ type Meal {
   id: ID!
   name: String!
   description: String
-  rating: Rating
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
-}
-
-enum Rating {
-  YUCK
-  MEH
-  GOOD
-  AMAZING
 }
 
 enum ModelSortDirection {
@@ -97,16 +89,10 @@ input ModelSizeInput {
   between: [Int]
 }
 
-input ModelRatingInput {
-  eq: Rating
-  ne: Rating
-}
-
 input ModelMealFilterInput {
   id: ModelIDInput
   name: ModelStringInput
   description: ModelStringInput
-  rating: ModelRatingInput
   and: [ModelMealFilterInput]
   or: [ModelMealFilterInput]
   not: ModelMealFilterInput
@@ -134,14 +120,12 @@ input CreateMealInput {
   id: ID
   name: String!
   description: String
-  rating: Rating
 }
 
 input UpdateMealInput {
   id: ID!
   name: String
   description: String
-  rating: Rating
 }
 
 input DeleteMealInput {
@@ -157,7 +141,6 @@ type Mutation {
 input ModelMealConditionInput {
   name: ModelStringInput
   description: ModelStringInput
-  rating: ModelRatingInput
   and: [ModelMealConditionInput]
   or: [ModelMealConditionInput]
   not: ModelMealConditionInput

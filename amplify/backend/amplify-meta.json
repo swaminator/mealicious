@@ -29,14 +29,14 @@
 				},
 				"GraphQLAPIIdOutput": "gvaasbguxfddxcowerxnqga6ai",
 				"GraphQLAPIEndpointOutput": "https://kvl6amjgszejvowejxhtetrfzu.appsync-api.us-west-2.amazonaws.com/graphql",
-				"GraphQLAPIKeyOutput": "da2-w3yraskdcvcvxfaxxfj3qsazxm"
+				"GraphQLAPIKeyOutput": "da2-imipcvkbljal5edtxke5jbtb7q"
 			},
 			"providerMetadata": {
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-mealicious-dev-104025-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apimeals"
 			},
-			"lastPushTimeStamp": "2020-06-29T17:49:52.890Z",
-			"lastPushDirHash": "xTpV7IdgG/CYRPcTQr6nY/6SjzE="
+			"lastPushTimeStamp": "2020-07-24T20:48:49.124Z",
+			"lastPushDirHash": "9boG5Bcqq/ZWL2FdyPttkr2DIN4="
 		}
 	}
 }

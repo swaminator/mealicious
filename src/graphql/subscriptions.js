@@ -7,7 +7,6 @@ export const onCreateMeal = /* GraphQL */ `
       id
       name
       description
-      rating
       createdAt
       updatedAt
     }
@@ -19,7 +18,6 @@ export const onUpdateMeal = /* GraphQL */ `
       id
       name
       description
-      rating
       createdAt
       updatedAt
     }
@@ -31,7 +29,6 @@ export const onDeleteMeal = /* GraphQL */ `
       id
       name
       description
-      rating
       createdAt
       updatedAt
     }

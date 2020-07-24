@@ -2,12 +2,4 @@ type Meal @model {
   id: ID!
   name: String!
   description: String
-  rating: Rating
-}
-
-enum Rating {
-  YUCK
-  MEH
-  GOOD
-  AMAZING
 }
